@@ -1,0 +1,8 @@
+# Protocol fixtures + official SDK; clients/parser/tests otherwise use stdlib.
+aiosmtpd==1.4.6
+mailkite-dev==0.20.0
+cryptography==45.0.7
+cffi==2.0.0
+pycparser==2.23
+attrs==25.3.0
+atpublic==6.0.2

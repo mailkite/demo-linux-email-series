@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  node:
+    name: Node 24 / ${{ matrix.demo }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        demo: [programmatic, provider, automation, nodejs]
+    defaults:
+      run:
+        working-directory: ${{ matrix.demo }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: ${{ matrix.demo }}/package-lock.json
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - name: Run offline example
+        run: |
+          if [ "${{ matrix.demo }}" = nodejs ]; then
+            npm start
+          else
+            npm run demo
+          fi
+
+  python:
+    name: Python 3.12 / python
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: python/requirements.txt
+      - name: Install pinned requirements in a virtual environment
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+      - name: Run offline demo and integration suite
+        run: |
+          . .venv/bin/activate
+          sh run.sh

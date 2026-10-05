@@ -1,0 +1,46 @@
+# Installed dependencies and interpreter caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Runtime storage and generated artifacts
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+screenshots/
+previews/
+preview/
+*-preview.*
+*.preview.*
+generated/
+outputs/
+coverage/
+dist/
+*.log
+
+# Local credentials, editor state, and private scratch work
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+.idea/
+.vscode/
+.cache/
+tmp/
+temp/
+.tmp/
+private/
+*.tmp
+*.swp
+*~

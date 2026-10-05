@@ -1,0 +1,15 @@
+{
+  "name": "demo-linux-email-provider",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "demo": "node offline.mjs",
+    "live": "node live.mjs",
+    "check": "node --check adapter.mjs && node --check live.mjs && node --check offline.mjs"
+  },
+  "dependencies": { "imapflow": "2.2.5", "mailkite": "0.20.0" }
+}

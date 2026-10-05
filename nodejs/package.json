@@ -1,0 +1,19 @@
+{
+  "name": "linux-email-servers-nodejs-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node loopback.mjs",
+    "test": "node --test test/*.test.mjs",
+    "imap": "node imap.mjs"
+  },
+  "dependencies": {
+    "imapflow": "2.2.5",
+    "mailkite": "0.20.0",
+    "mailparser": "3.9.35",
+    "nodemailer": "10.0.14",
+    "smtp-server": "3.19.17"
+  }
+}

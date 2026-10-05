@@ -1,0 +1,12 @@
+{
+  "proseWords": 1795,
+  "snippets": [
+    "quickstart.sh",
+    "live.mjs"
+  ],
+  "builtVisuals": 2,
+  "topVisual": true,
+  "burstiness": 0.905,
+  "ttr": 0.416,
+  "phraseFlags": []
+}

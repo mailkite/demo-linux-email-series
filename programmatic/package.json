@@ -1,0 +1,9 @@
+{
+  "name": "demo-programmatic-linux-email-servers",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": { "demo": "node demo.mjs", "start": "node start.mjs", "test": "node --test test/*.test.mjs" },
+  "dependencies": { "mailkite": "0.20.0", "mailparser": "3.9.35", "nodemailer": "10.0.14", "smtp-server": "3.19.17" }
+}

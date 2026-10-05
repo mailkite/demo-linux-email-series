@@ -1,0 +1,14 @@
+{
+  "name": "demo-linux-email-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "demo": "node demo.mjs",
+    "test": "node --test test/*.test.mjs",
+    "start": "node cli.mjs serve",
+    "work": "node cli.mjs work"
+  },
+  "dependencies": { "mailkite": "0.20.0", "mailparser": "3.9.35" }
+}
